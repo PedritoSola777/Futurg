@@ -1,0 +1,174 @@
+/* ========== GF HERO (aislado) ========== */
+:root {
+  --gf-hero-vh: 1vh;                   /* se sobrescribe vía JS */
+  --gf-hero-max-w: 1920px;
+  --gf-hero-caption-color: #0b2e5f;
+  --gf-hero-dot: rgba(255,255,255,.6);
+  --gf-hero-dot-active: #fff;
+  --gf-hero-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+.gf-hero {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  /* para no heredar estilos del tema */
+  all: revert-layer;
+}
+
+.gf-hero__viewport {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--gf-hero-max-w);
+  /* Alto estable sin depender del scroll */
+  min-height: 480px;
+  height: calc(var(--gf-hero-vh) * 100);
+  background: #f4f4f4;
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
+.gf-hero__slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity .45s ease;
+}
+
+.gf-hero__slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.gf-hero__slide picture,
+.gf-hero__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gf-hero__slide img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Caption */
+.gf-hero__caption {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: clamp(40px, 10vh, 120px);
+  padding: 0 clamp(16px, 5vw, 72px);
+  pointer-events: none;
+}
+.gf-hero__caption h1 {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.08;
+  color: var(--gf-hero-caption-color);
+  font-size: clamp(28px, 4.6vw, 62px);
+  text-shadow: var(--gf-hero-shadow);
+}
+
+/* Dots */
+.gf-hero__dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 18px;
+  display: flex; gap: 10px; justify-content: center; align-items: center;
+  z-index: 2;
+  pointer-events: auto;
+}
+.gf-hero__dots button {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 0; background: var(--gf-hero-dot);
+  padding: 0; cursor: pointer; transition: transform .2s, background .2s;
+}
+.gf-hero__dots button[aria-selected="true"] {
+  background: var(--gf-hero-dot-active);
+  transform: scale(1.15);
+}
+
+/* Flechas */
+.gf-hero__arrow {
+  position: absolute; top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 999px;
+  border: 0; background: rgba(0,0,0,.28); color: #fff;
+  font-size: 28px; line-height: 1;
+  display: grid; place-items: center;
+  z-index: 2; cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.gf-hero__arrow:hover { background: rgba(0,0,0,.4); }
+.gf-hero__arrow:active { transform: translateY(-50%) scale(.96); }
+.gf-hero__arrow--prev { left: 12px; }
+.gf-hero__arrow--next { right: 12px; }
+
+/* Accesibilidad / movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .gf-hero__slide { transition: none; }
+  .gf-hero__arrow { transition: none; }
+}
+
+/* Desktop pequeños: deja más aire al caption */
+@media (min-width: 992px) {
+  .gf-hero__caption { bottom: clamp(60px, 12vh, 180px); }
+  .gf-hero__caption h1 { font-size: clamp(36px, 3.8vw, 72px); }
+}
+
+/* Altura fallback si el navegador no soporta visualViewport */
+@supports not (height: 1dvh) {
+  .gf-hero__viewport { height: calc(var(--gf-hero-vh) * 100); }
+}
+
+
+/* ======= SOLO MÓVIL: scrim oscuro para legibilidad ======= */
+@media (max-width: 768px) {
+
+  /* capa oscura sobre cada slide (debajo del caption) */
+  .gf-hero__slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Gradiente que oscurece más la parte baja donde va el texto */
+    background:
+      linear-gradient(to top,
+        rgba(0,0,0,.55) 0%,
+        rgba(0,0,0,.38) 35%,
+        rgba(0,0,0,0) 65%);
+    pointer-events: none;
+    z-index: 1; /* debajo del caption (que va arriba) */
+  }
+
+  /* Asegura que el caption quede por encima del scrim */
+  .gf-hero__caption {
+    z-index: 2;
+    bottom: clamp(20px, 9vh, 64px); /* un pelín más arriba en móvil */
+    padding: 0 20px;
+  }
+
+  /* Texto blanco + sombra más marcada para móvil */
+  .gf-hero__caption h1 {
+    color: #fff;
+    text-shadow: 0 3px 14px rgba(0,0,0,.55);
+  }
+
+  /* Dots un poco más visibles en móvil */
+  .gf-hero__dots button {
+    background: rgba(255,255,255,.75);
+  }
+  .gf-hero__dots button[aria-selected="true"] {
+    background: #fff;
+    transform: scale(1.2);
+  }
+
+  /* Flechas con mayor contraste en móvil */
+  .gf-hero__arrow {
+    background: rgba(0,0,0,.38);
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
