@@ -40,6 +40,27 @@
 		object-fit: cover;  /* recorta sin deformar */
 		display: block;
 		}
+
+		/* Desktop (como está): puedes dejarlo tal cual */
+.contact-us-section .img-box{
+  background-image:url('images/home/22.jpg');  /* ajusta la ruta si hace falta */
+  background-size: cover;
+  background-position: center;
+  border-radius:12px;                           /* opcional */
+  min-height: 420px;                            /* tu altura de desktop */
+}
+
+/* Mobile: que se vea completa y con relación de aspecto */
+@media (max-width: 767px) {
+  .contact-img {
+    width: 100%;        /* ocupa todo el ancho */
+    height: auto;       /* respeta proporción original */
+    max-height: 250px;  /* opcional, evita que sea muy alta */
+    object-fit: cover;  /* recorta de forma elegante si excedes alto */
+  }
+}
+
+
 		</style>
 	
 		
@@ -81,12 +102,12 @@
 								<!-- <li class="address">
 									<i class="icon flaticon-placeholder"></i>
 									<h6>Dirección de oficinas:</h6>
-									<p>Av. Independencia 310, Barrio de Sta. Clara, 50090, Toluca de Lerdo, Estado de México</p>
+									<p>Av. Independencia 310, Mz. 11, Barrio de Sta. Clara, 50090, Toluca de Lerdo, Estado de México</p>
 								</li> -->
 								<li class="address">
-									<i class="icon flaticon-multimedia"></i>
-									<h6>Nuestro correo:</h6>
-									<p>clientes@grupofuturaconsultores.com</p>
+									<i class="icon flaticon-telefono"></i>
+									<h6>Teléfono de oficinas:</h6>
+									<p><a href="tel:+527297307429">729-730-7429</a></p>
 								</li>
 								<!-- <li class="quotes"><a href="#">GET A QUOTES</a></li> -->
 							</ul>
@@ -99,60 +120,24 @@
 						<div class="bg-wrapper clearfix">
 							<!-- ============== Menu Warpper ================ -->
 					   		<div class="menu-wrapper float-left">
+								<button class="menu-trigger" type="button" aria-label="Abrir menú" aria-controls="mega-menu-holder" aria-expanded="false">
+								<span class="mt-bar"></span>
+								<span class="mt-bar"></span>
+								<span class="mt-bar"></span>
+								</button>
+
 					   			<nav id="mega-menu-holder" class="clearfix">
-								   <ul class="clearfix">
-									    <li class="active"><a href="index.html" style="color: black;">Inicio</a>
-									    	<!-- <ul class="dropdown">
-									        	<li><a href="index.html">Home version one</a></li>
-									        	<li><a href="index-2.html">Home version two</a></li>
-									      </ul> -->
-									    </li>
-									    <!-- <li><a href="#" style="color: black;">Servicios</a> -->
-									    	<!-- <ul class="dropdown">
-									    		<li><a href="about.html">About us</a></li>
-									    		<li><a href="team.html">Our team</a></li>
-									    		<li><a href="faq.html">Faq's</a></li>
-									    		<li><a href="404.html">404</a></li>
-									    		<li><a href="shop.html">Shop</a></li>
-									    		<li><a href="shop-details.html">Shop details</a></li>
-									            <li><a href="#">Third Level menu</a>
-									    			<ul>
-									    				<li><a href="#">Demo one</a></li>
-									    				<li><a href="#">Demo two</a></li>
-									    			</ul>
-									    		</li>
-									       </ul> -->
-									    </li>
-									    <li><a href="contact.html" style="color: black;">Contacto</a>
-									    	<!-- <ul class="dropdown">
-									        	<li><a href="service.html">Service Version one</a></li>
-									        	<li><a href="service-v2.html">Service version two</a></li>
-									        	<li><a href="service-details.html">Service Details</a></li>
-									       </ul> -->
-									    </li>
-									    <li><a href="blog.html" style="color: black;">Blog del derechohaiente</a>
-									    	<!-- <ul class="dropdown">
-									        	<li><a href="project.html">project</a></li>
-									        	<li><a href="project-details.html">Project details</a></li>
-									       </ul> -->
-									    </li>
-									    <!-- <li><a href="#">Blog</a>
-									    	<ul class="dropdown">
-									        	<li><a href="blog.html">Blog List</a></li>
-									        	<li><a href="blog-grid.html">Blog Grid</a></li>
-									        	<li><a href="blog-details.html">Blog details</a></li>
-									       </ul>
-									    </li>-->
-										<li><a href="faq.html" style="color: black;">Preguntas frecuentes</a>
-									    	<!-- <ul class="dropdown">
-									        	<li><a href="service.html">Service Version one</a></li>
-									        	<li><a href="service-v2.html">Service version two</a></li>
-									        	<li><a href="service-details.html">Service Details</a></li>
-									       </ul> -->
-										   </ul>
-										</li>								   
-									
-								</nav> <!-- /#mega-menu-holder -->
+								<ul class="clearfix">
+									<li class="active"><a href="index.html" style="color:black;">Inicio</a></li>
+
+									<li><a href="contact.html" style="color:black;">Contacto</a></li>
+
+									<li><a href="blog.html" style="color:black;">Blog del derechohabiente</a></li>
+
+									<li><a href="faq.html" style="color:black;">Preguntas frecuentes</a></li>
+								</ul>
+								</nav>
+ <!-- /#mega-menu-holder -->
 					   		</div> <!-- /.menu-wrapper -->
 
 					   		<div class="right-widget float-right">
@@ -258,7 +243,7 @@
 
 <div style="display: flex; gap: 10px; align-items: center;">
     <a href="https://wa.me/527297307429" target="_blank" class="whatsapp-button">
-        <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp!
+        <i class="fab fa-whatsapp"></i> ¡Escríbenos por WhatsApp!
     </a>
 </div>
 
@@ -330,54 +315,55 @@
 								<p>En Grupo Futura, nos comprometemos a proteger la privacidad de nuestros clientes y usuarios, garantizando la confidencialidad de los datos personales que nos proporcionan, conforme a lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y su Reglamento.</p>
 								<!-- <p>That this group would somehow form a family that's the way we all became the Brady Bunch apartment in the sky moving on up to the east side a family to explore strange new worlds.</p> -->
 								<!-- <p>This tropic port aboard this tiny ship today still wanted by the government apartment in the sky moving on up to the east side a family to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before you would see the biggest gift would be from me and the card.</p> -->
-								<div class="market-growth">
-									<!-- <h4 class="sub-heading">Reliable Market Growth:</h4> -->
-									<div class="wrapper">
-										<div class="row">
-											<!-- <div class="col-xl-6 col-md-5 col-12"><img src="images/home/21.jpg" alt=""></div> -->
-											<div class="col-xl-6 col-md-7 col-12">
-												<!-- <p>The sky moving on up to the east side a family to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before you would see the biggest gift.</p> -->
-												<ul>
-													<li>1. Responsable del Tratamiento de Datos Personales: La Empresa es responsable del tratamiento, uso y protección de los datos personales que usted nos proporcione. Nuestro compromiso es salvaguardar su información con altos estándares de seguridad, cumpliendo con lo establecido en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</li>
-													<br>
-													<li>2. Datos Personales que Recabamos: Para la correcta prestación de nuestros servicios de asesoría en trámites de AFORE, pensiones, vivienda y retiros, podremos solicitar y recabar, de forma directa, telefónica o digital, los siguientes datos personales: Nombre completo, Edad, Estado civil, Número telefónico, Correo electrónico, Domicilio completo, Identificación oficial, Información de contacto de terceros autorizados (en caso de ser necesario), Documentación relacionada con sus trámites de seguridad social, vivienda y pensiones. En caso de ser estrictamente necesario, podremos solicitar información adicional para verificar su identidad o dar seguimiento a los servicios contratados.</li>
-													<br>
-<li>
-  <strong>3. Finalidades del Tratamiento de Datos:</strong>  
-  Los datos personales que recabamos serán utilizados para las siguientes finalidades primarias y secundarias:  
+								 <!-- /.presentation-section -->
+								<div class="x">
+  <p>
+    <strong>1. Responsable del Tratamiento de Datos Personales:</strong>  
+    La Empresa es responsable del tratamiento, uso y protección de los datos personales que usted nos proporcione. 
+    Nuestro compromiso es salvaguardar su información con altos estándares de seguridad, cumpliendo con lo establecido 
+    en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+  </p>
 
+  <p>
+    <strong>2. Datos Personales que Recabamos:  </strong>
+    Para la correcta prestación de nuestros servicios de asesoría en trámites de afore, pensiones, vivienda y retiros, 
+    podremos solicitar y recabar, de forma directa, telefónica o digital, los siguientes datos personales:  
+    Nombre completo, Edad, Estado civil, Número telefónico, Correo electrónico, Domicilio completo, Identificación oficial, 
+    Información de contacto de terceros autorizados (en caso de ser necesario), Documentación relacionada con sus trámites 
+    de seguridad social, vivienda y pensiones. En caso de ser estrictamente necesario, podremos solicitar información 
+    adicional para verificar su identidad o dar seguimiento a los servicios contratados.
+  </p>
+
+  <p><strong>3. Finalidades del Tratamiento de Datos:</strong></p>
+
+  <p>Finalidades primarias:</p>
   <ul>
-    <li><strong>Finalidades primarias:</strong>
-      <ul>
-        <li>Proveer los servicios de asesoría solicitados por usted.</li>
-        <li>Gestionar, administrar y dar seguimiento a los trámites ante las autoridades correspondientes.</li>
-        <li>Elaborar expedientes de clientes y mantener actualizada su información.</li>
-        <li>Contactarlo para la prestación de servicios o dar respuesta a dudas o solicitudes.</li>
-      </ul>
-    </li>
+    <li>Proveer los servicios de asesoría solicitados por usted.</li>
+    <li>Gestionar, administrar y dar seguimiento a los trámites ante las autoridades correspondientes.</li>
+    <li>Elaborar expedientes de clientes y mantener actualizada su información.</li>
+    <li>Contactarlo para la prestación de servicios o dar respuesta a dudas o solicitudes.</li>
+  </ul>
 
-    <li><strong>Finalidades secundarias:</strong>
-      <ul>
-        <li>Ofrecerle información sobre nuevos servicios, promociones o beneficios relacionados.</li>
-        <li>Realizar encuestas de calidad para evaluar y mejorar nuestros servicios.</li>
-        <li>Invitarlo a participar en eventos, campañas o actividades organizadas por La Empresa.</li>
-      </ul>
-    </li>
+  <p>Finalidades secundarias:</p>
+  <ul>
+    <li>Ofrecerle información sobre nuevos servicios, promociones o beneficios relacionados.</li>
+    <li>Realizar encuestas de calidad para evaluar y mejorar nuestros servicios.</li>
+    <li>Invitarlo a participar en eventos, campañas o actividades organizadas por La Empresa.</li>
   </ul>
 
   <p>
-    Si usted no desea que sus datos personales sean tratados para finalidades secundarias, podrá manifestarlo en cualquier momento a través de nuestros canales de contacto.
+    Si usted no desea que sus datos personales sean tratados para finalidades secundarias, 
+    podrá manifestarlo en cualquier momento a través de nuestros canales de contacto.
   </p>
-</li>
-													<br>
-													<li>4. Transferencia de Datos Personales: La Empresa se compromete a no transferir sus datos personales a terceros sin su consentimiento expreso, salvo cuando sea necesario para cumplir obligaciones legales o contractuales, o en aquellos casos expresamente permitidos por la Ley. En caso de ser necesario compartir su información con proveedores de servicios que actúen en nuestro nombre, estos estarán obligados a proteger su información bajo las mismas medidas de seguridad y confidencialidad.</li>
-													<br>
-													<!-- <li>Most of this beautiful the day.</li> -->
-												</ul>
-											</div>
-										</div>
-									</div> <!-- /.wrapper -->
-								</div> <!-- /.presentation-section -->
+
+  <p>
+    <strong>4. Transferencia de Datos Personales:</strong>  
+    La Empresa se compromete a no transferir sus datos personales a terceros sin su consentimiento expreso, salvo cuando 
+    sea necesario para cumplir obligaciones legales o contractuales, o en aquellos casos expresamente permitidos por la Ley.  
+    En caso de ser necesario compartir su información con proveedores de servicios que actúen en nuestro nombre, 
+    estos estarán obligados a proteger su información bajo las mismas medidas de seguridad y confidencialidad.
+  </p>
+</div>
 
 								<!-- /.topics -->
  <!-- /.market-growth -->
@@ -397,84 +383,51 @@
 				Footer
 			=====================================================
 			-->
-				<footer class="theme-footer-two">
-				<div class="top-footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-4 col-sm-6 col-12 logo-widget">
-								<!-- <div class="logo"><a href="index.html"><img src="images/logo/logo2.png" alt=""></a></div>
-								<p>Tthis tropic port aboard this tiny ship today still wanted by theam government they survive on up east side to a deluxe as soldiers.</p> -->
-								<!-- <ul class="social-icon">
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								</ul> -->
-							</div> <!-- /.logo-widget -->
-							<!-- <div class="col-lg-2 col-sm-6 col-12 footer-list">
-								<h6 class="title">EXPLORE</h6>
-								<ul>
-									<li><a href="about.html">About us</a></li>
-									<li><a href="service.html">Our Solutions</a></li>
-									<li><a href="project.html">Case Studies</a></li>
-									<li><a href="blog.html">Blog</a></li>
-									<li><a href="contact.html">Contact us</a></li>
-								</ul> -->
-							</div> <!-- /.footer-list -->
-							<!-- <div class="col-lg-3 col-sm-6 col-12 footer-gallery">
-								<h6 class="title">Gallery</h6> -->
-								<!-- <div class="wrapper">
-									<div class="row">
-										<div class="col-4">
-											<a href="images/portfolio/7.jpg" data-fancybox="gallery" data-caption="Caption for single image" class="fancybox"><img src="images/portfolio/7.jpg" alt=""></a>
-										</div>
-										<div class="col-4">
-											<a href="images/portfolio/8.jpg" data-fancybox="gallery" data-caption="Caption for single image" class="fancybox"><img src="images/portfolio/8.jpg" alt=""></a>
-										</div>
-										<div class="col-4">
-											<a href="images/portfolio/9.jpg" data-fancybox="gallery" data-caption="Caption for single image" class="fancybox"><img src="images/portfolio/9.jpg" alt=""></a>
-										</div>
-										<div class="col-4">
-											<a href="images/portfolio/10.jpg" data-fancybox="gallery" data-caption="Caption for single image" class="fancybox"><img src="images/portfolio/10.jpg" alt=""></a>
-										</div>
-										<div class="col-4">
-											<a href="images/portfolio/11.jpg" data-fancybox="gallery" data-caption="Caption for single image" class="fancybox"><img src="images/portfolio/11.jpg" alt=""></a>
-										</div>
-										<div class="col-4">
-											<a href="images/portfolio/12.jpg" data-fancybox="gallery" data-caption="Caption for single image" class="fancybox"><img src="images/portfolio/12.jpg" alt=""></a>
-										</div>
-									</div>
-								</div> -->
-							</div> <!-- /.footer-gallery -->
-							
-							<div class="col-lg-3 col-sm-6 col-12 contact-widget">
-								<img src="images/logo/COLOR-PNG.png" alt="" style="width: 300px;">
-								<h6 class="title">CONTACTO</h6>
-								<ul>
-									<li>
-										<i class="flaticon-direction-signs"></i>
-										Av. Independencia 310, Barrio de Sta. Clara, 50090, Toluca de Lerdo, Estado de México
-									</li>
-									<li>
-										<i class="flaticon-multimedia-1"></i>
-										<a href="#">clientes@grupofuturaconsultores.com</a>
-									</li>
-									<li>
-										<i class="fa fa-phone" aria-hidden="true"></i>
-										<a href="tel:+527297307429">729-730-7429</a>
-									</li>
-								</ul>
-							</div> <!-- /.contact-widget -->
-						</div> <!-- /.row -->
-					</div> <!-- /.container -->
-				</div> <!-- /.top-footer -->
-				<div class="bottom-footer">
-					<div class="container">
-						<p>&copy; Copyrights. Todos los derechos reservados.</p>
-					</div>
-				</div> <!-- /.bottom-footer -->
-			</footer> <!-- /.theme-footer -->
+			<footer class="site-footer" role="contentinfo">
+  <div class="sf-top">
+    <div class="sf-container">
+      <img class="sf-logo" src="images/logo/W.png" alt="Grupo Futura">
+
+      <section class="sf-contact" aria-labelledby="sf-contact-title">
+        <h6 id="sf-contact-title">CONTACTO</h6>
+        <ul class="sf-list">
+          <li class="sf-item">
+            <span class="sf-ico" aria-hidden="true">
+              <!-- Dirección -->
+              <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
+            </span>
+            Av. Independencia 310, Mz 11. Barrio de Sta. Clara, 50090, Toluca de Lerdo, Estado de México
+          </li>
+
+          <li class="sf-item">
+            <span class="sf-ico" aria-hidden="true">
+              <!-- Correo -->
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+            </span>
+            <a href="mailto:clientes@grupofuturaconsultores.com">clientes@grupofuturaconsultores.com</a>
+          </li>
+
+          <li class="sf-item">
+            <span class="sf-ico" aria-hidden="true">
+              <!-- Teléfono -->
+              <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1.5 1.5 0 0 1 1.6-.36c1.76.7 3.72 1.08 5.04 1.16a1.5 1.5 0 0 1 1.4 1.5V20a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-16.64-16.6A2 2 0 0 1 6 3h2.5a1.5 1.5 0 0 1 1.5 1.24c.13.86.39 1.67.74 2.42.23.49.12 1.08-.26 1.47L8.3 10a1.1 1.1 0 0 1-1.7.8Z"/></svg>
+            </span>
+            <a href="tel:+527297307429">729-730-7429</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <div class="sf-bottom">
+    <div class="sf-container">
+      <p>© Copyrights. Todos los derechos reservados.</p>
+    </div>
+  </div>
+			</footer>
+
+
+
 			
 
 	        
@@ -587,6 +540,3 @@
   window.addEventListener('load', function(){ close(); });
 })();
 </script>
-
-
-sc
