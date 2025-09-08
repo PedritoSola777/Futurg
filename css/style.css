@@ -2232,3 +2232,10 @@ body .theme-button-one:hover {background:#1b72b2; }
   font: inherit;          /* hereda tipografía, tamaño y estilo */
   text-decoration: none;  /* quita subrayado */
 }
+
+
+@media (max-width: 768px) {
+  .logo {
+    height: 200px; /* Ajusta este valor según lo grande que lo quieras en mobile */
+  }
+}
