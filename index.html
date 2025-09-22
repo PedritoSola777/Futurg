@@ -404,13 +404,13 @@ Designación de beneficiarios
 								</div>  <!-- /.col- -->
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="3021" data-speed="1200" data-refresh-interval="5">0</span>k</div>
+				        				<div class="number"><span class="timer" data-from="0" data-to="3090" data-speed="1200" data-refresh-interval="5">0</span>+</div>
 				        				<p>Trámites realizados</p>
 				        			</div> <!-- /.single-counter-box -->
 								</div>  <!-- /.col- -->
 								<div class="col-md-3 col-6">
 									<div class="single-counter-box">
-				        				<div class="number"><span class="timer" data-from="0" data-to="59" data-speed="1200" data-refresh-interval="5">0</span></div>
+				        				<div class="number"><span class="timer" data-from="0" data-to="64" data-speed="1200" data-refresh-interval="5">0</span></div>
 				        				<p>Asesores expertos</p>
 				        			</div> <!-- /.single-counter-box -->
 								</div>  <!-- /.col- -->
@@ -421,7 +421,157 @@ Designación de beneficiarios
 				</div> <!-- /.container -->
 			</div>
 
-			
+			<div id="chat-icon" class="chat-icon" onclick="togglePopup()">
+        💬
+      </div>
+      
+      <div id="popup-card" class="popup-card">
+        <span class="close-btn" onclick="togglePopup()">✖</span>
+        <img src="images/team/3.jpg" alt="Perfil de María" class="profile-image">
+        <div class="popup-content">
+          <h4>Rocio Hernández -</h4>
+          <p>Bienvenido a Grupo Futura. Si necesitas más información sobre nuestros servicios o necesitas ayuda de un asesor para realizar cualquier trámite con tu Afore, envíanos mensaje.</p>
+          <div class="popup-actions">
+            <a href="mailto:clientes@grupofuturaconsultores.com">E-mail</a>
+            <a href="https://wa.me/527297307429" target="_blank" class="whatsapp-button">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      
+   <style>
+    .popup-card {
+  position: fixed;
+  bottom: 80px; /* espacio para evitar el chat-icon */
+  right: 20px;
+  width: 450px;
+  max-width: 90vw; /* limitar ancho en móviles */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  align-self: center;
+}
+
+.popup-content h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.popup-content p {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.email-btn,
+.whatsapp-btn {
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.email-btn {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.whatsapp-btn {
+  background-color: #e0ffe0;
+  color: #388e3c;
+}
+
+.email-btn:hover,
+.whatsapp-btn:hover {
+  opacity: 0.9;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+}
+
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1b72b2;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 🔽 Responsividad para móviles */
+@media screen and (max-width: 480px) {
+  .popup-card {
+    width: 90%;
+    right: 5%;
+    bottom: 90px;
+    padding: 10px;
+  }
+
+  .popup-content h4 {
+    font-size: 14px;
+  }
+
+  .popup-content p {
+    font-size: 13px;
+  }
+
+  .popup-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-btn,
+  .whatsapp-btn {
+    width: 80%;
+    text-align: center;
+  }
+
+  .close-btn {
+    font-size: 18px;
+  }
+}
+   </style>
 
 			<!-- 
 			=============================================
@@ -584,6 +734,23 @@ Designación de beneficiarios
   <p>“El trámite me pareció costoso y decidí no continuarlo. Creo que deberían ofrecer más opciones accesibles.”</p>
   <div class="name">
     <h6>Antonio Delgado</h6>
+    <!-- <span>Cliente</span> -->
+  </div>
+</div>
+
+<div class="item">
+  <p>“Yo recuerdo que antes las aportaciones que hacian los patrones eran mayores, ahora te quieren dar de alta con el minimo y las afores y las agencias te quieren cobrar muchas comisiones.”</p>
+  <div class="name">
+    <h6>Lucía Hernández</h6>
+    <!-- <span>Cliente</span> -->
+  </div>
+</div>
+
+
+<div class="item">
+  <p>“Yo tramite con ellos mi retito de remodelacion, todo bien la verdad, nadamas que si tardo un poc mas de lo que pensaba.”</p>
+  <div class="name">
+    <h6>Carlos Ramírez</h6>
     <!-- <span>Cliente</span> -->
   </div>
 </div>
@@ -1045,7 +1212,21 @@ Designación de beneficiarios
 		<script src="js/banner.js"></script>	
 		
 
+		<script>
+    function togglePopup() {
+  const popup = document.getElementById('popup-card');
+  const chatIcon = document.getElementById('chat-icon');
 
+  if (popup.style.display === 'none' || popup.style.display === '') {
+    popup.style.display = 'flex'; // Mostrar el popup
+    chatIcon.style.display = 'none'; // Ocultar el ícono de chat
+  } else {
+    popup.style.display = 'none'; // Ocultar el popup
+    chatIcon.style.display = 'flex'; // Mostrar el ícono de chat
+  }
+}
+
+</script>
 
 		
 

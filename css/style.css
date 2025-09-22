@@ -1314,6 +1314,19 @@ body .theme-button-one:hover {background:#1b72b2; }
   padding: 110px 0 70px 0;
 }
 .theme-inner-banner .overlay h2 {font-size: 45px;color: #fff;text-transform: uppercase;}
+/*---------------------- Theme Inner Banner2 -----------------*/
+.theme-inner-banner2 {
+  background: url(https://img.freepik.com/free-photo/question-mark-bubble-speech-sign-symbol-icon-3d-rendering_56104-1950.jpg?ga=GA1.1.1802533643.1735888286&semt=ais_incoming&w=740&q=80) no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #707d9e;
+}
+.theme-inner-banner2 .overlay {
+  background: rgba(0,26,87,0.4);
+  text-align: center;
+  padding: 110px 0 70px 0;
+}
+.theme-inner-banner2 .overlay h2 {font-size: 45px;color: #fff;text-transform: uppercase;}
 /*------------------- Why WE Best -------------------*/
 .why-we-best {
   background: url(../images/home/11.jpg) no-repeat center center;
