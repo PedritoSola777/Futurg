@@ -22,7 +22,61 @@
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		<link rel="stylesheet" href="css/bannerMob.css">
 
-	
+		<style>
+			@media (max-width: 768px) {
+  /* Eliminar márgenes y altura sobrante del contenedor principal */
+  .header-one,
+  .top-header,
+  .theme-menu-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  /* Compactar el contenedor superior */
+  .top-header .container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 5px 0 !important;
+    height: auto !important;
+  }
+
+  /* Centramos y agrandamos el logo sin espacio extra */
+  .top-header .logo {
+    float: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .top-header .logo img {
+    height: 100px !important; /* Ajústalo si lo quieres más grande o chico */
+    width: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* Ocultamos teléfono/barra de info para liberar espacio */
+  .address-wrapper {
+    display: none !important;
+  }
+
+  /* Quitamos el espacio fantasma del wrapper del menú */
+  .theme-menu-wrapper .bg-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Evita cualquier colapso por floats viejos */
+  .clearfix::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+
+		</style>
 
 
 
@@ -54,7 +108,7 @@
 			<header class="header-one">
 				<div class="top-header">
 					<div class="container clearfix">
-						<div class="logo float-left"><a href="index.html"><img src="images/logo/COLOR-PNG.png" alt="" style="height: 150px;"></a></div>
+						<div class="logo float-left"><a href="index.html"><img src="images/logo/COLOR-PNG.png" alt=""></a></div>
 						<div class="address-wrapper float-right">
 							<ul>
 								<!-- <li class="address">
@@ -256,130 +310,172 @@
 						<h2>TE ASESORAMOS PARA TRÁMITES DE</h2>
 						<!-- <p>A tale of a fateful trip that started from this tropic port aboard this tiny ship today stillers</p> -->
 					</div> <!-- /.theme-title-one -->
-					<div class="wrapper">
-						<div class="row">
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/foto-gratis/pareja-joven-chequeando-su-presupuesto-familiar_273609-12836.jpg?w=740&q=80" alt="">
-			</div>
-			<div class="text">
-				<h5>Retiro por desempleo</h5>
-				<p>Accede a tus ahorros en caso de desempleo.</p>
-			</div>
-		</div>
-	</div>
+					<div class="accordion-wrapper">
+  <div class="panel-group theme-accordion" id="accordion-services">
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/foto-gratis/fotografia-primer-plano-persona-que-piensa-comprar-o-vender-casa_181624-19907.jpg?w=740&q=80" alt="">
-			</div>
-			<div class="text">
-				<h5>Créditos de vivienda</h5>
-				<p>Solicita créditos para comprar o mejorar tu casa.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 1 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc1" class="collapsed">
+            <img src="https://img.freepik.com/foto-gratis/pareja-joven-chequeando-su-presupuesto-familiar_273609-12836.jpg?w=740&q=80" class="icon-service"> Retiro por desempleo
+          </a>
+        </h6>
+      </div>
+      <div id="svc1" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Permite acceder a una parte de tus recursos en caso de pérdida de empleo, conforme a los requisitos establecidos por la ley.</p>
+        </div>
+      </div>
+    </div>
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/foto-gratis/elementos-financieros-vista-frontal-alcancia-rosada_23-2148783071.jpg?w=740&q=80" alt="">
-			</div>
-			<div class="text">
-				<h5>Retiro de aportaciones voluntarias</h5>
-				<p>Recupera tus aportaciones voluntarias de la afore.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 2 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc2" class="collapsed">
+            <img src="https://img.freepik.com/foto-gratis/fotografia-primer-plano-persona-que-piensa-comprar-o-vender-casa_181624-19907.jpg?w=740&q=80" class="icon-service"> Créditos de vivienda
+          </a>
+        </h6>
+      </div>
+      <div id="svc2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Solicita financiamiento para la compra, remodelación o construcción de vivienda bajo esquemas autorizados.</p>
+        </div>
+      </div>
+    </div>
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/foto-gratis/nuestro-consultor-es-muy-confiable_329181-14732.jpg?w=740&q=80" alt="">
-			</div>
-			<div class="text">
-				<h5>Pensión por cesantía</h5>
-				<p>Pensión al dejar de trabajar antes de la edad de retiro.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 3 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc3" class="collapsed">
+            <img src="https://img.freepik.com/foto-gratis/elementos-financieros-vista-frontal-alcancia-rosada_23-2148783071.jpg?w=740&q=80" class="icon-service"> Retiro de aportaciones voluntarias
+          </a>
+        </h6>
+      </div>
+      <div id="svc3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Recupera los recursos que has aportado voluntariamente a tu cuenta individual, según las disposiciones aplicables.</p>
+        </div>
+      </div>
+    </div>
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/premium-photo/portrait-smiling-senior-couple_236854-32291.jpg?w=740&q=80" alt="">
-			</div>
-			<div class="text">
-				<h5>Pensión por vejez</h5>
-				<p>Pensión al cumplir la edad de retiro establecida.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 4 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc4" class="collapsed">
+            <img src="https://img.freepik.com/foto-gratis/nuestro-consultor-es-muy-confiable_329181-14732.jpg?w=740&q=80" class="icon-service"> Pensión por cesantía
+          </a>
+        </h6>
+      </div>
+      <div id="svc4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Otorga un ingreso mensual si dejas de trabajar antes de la edad legal de retiro y cumples con los requisitos.</p>
+        </div>
+      </div>
+    </div>
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/free-photo/family-with-picture-album-medium-shot_23-2149515298.jpg?w=740&q=80" alt="">
-			</div>
-			<div class="text">
-				<h5>Designación de beneficiarios</h5>
-				<p>Elige y registra a tus beneficiarios oficiales.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 5 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc5" class="collapsed">
+            <img src="https://img.freepik.com/premium-photo/portrait-smiling-senior-couple_236854-32291.jpg?w=740&q=80" class="icon-service"> Pensión por vejez
+          </a>
+        </h6>
+      </div>
+      <div id="svc5" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Recibe una pensión al alcanzar la edad de retiro estipulada en la normativa vigente.</p>
+        </div>
+      </div>
+    </div>
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041854.jpg?w=740&q=80" alt="">
-			</div>
-			<div class="text">
-				<h5>Portabilidad de afore</h5>
-				<p>Cambia tu afore y conserva tus derechos.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 6 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc6" class="collapsed">
+            <img src="https://img.freepik.com/free-photo/family-with-picture-album-medium-shot_23-2149515298.jpg?w=740&q=80" class="icon-service"> Designación de beneficiarios
+          </a>
+        </h6>
+      </div>
+      <div id="svc6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Registra a las personas autorizadas para disponer de tus recursos en caso de fallecimiento.</p>
+        </div>
+      </div>
+    </div>
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/free-photo/blur-hospital_1203-7972.jpg?w=740&q=80" alt="">
-			</div>
-			<div class="text">
-				<h5>Altas y bajas ante el IMSS</h5>
-				<p>Gestiona altas y bajas de trabajadores ante el IMSS.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 7 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc7" class="collapsed">
+            <img src="https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041854.jpg?w=740&q=80" class="icon-service"> Portabilidad de afore
+          </a>
+        </h6>
+      </div>
+      <div id="svc7" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Permite transferir tus recursos a otra administradora sin perder derechos adquiridos.</p>
+        </div>
+      </div>
+    </div>
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/foto-gratis/novio-pone-anillo-bodas-mano-novia_8353-7221.jpg?w=1480" alt="">
-			</div>
-			<div class="text">
-				<h5>Retiro por matrimonio</h5>
-				<p>Recibe un apoyo económico al casarte.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 8 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc8" class="collapsed">
+            <img src="https://img.freepik.com/free-photo/blur-hospital_1203-7972.jpg?w=740&q=80" class="icon-service"> Altas y bajas ante el IMSS
+          </a>
+        </h6>
+      </div>
+      <div id="svc8" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Gestionamos el registro y baja de trabajadores ante el Instituto Mexicano del Seguro Social.</p>
+        </div>
+      </div>
+    </div>
 
-	<div class="col-xl-4 col-md-6 col-12">
-		<div class="single-service">
-			<div class="img-box">
-				<img src="https://img.freepik.com/foto-gratis/monedas-frasco-vidrio-espacio-copia_23-2148783058.jpg?w=1480" alt="">
-			</div>
-			<div class="text">
-				<h5>Modalidad 40</h5>
-				<p>Sigue cotizando para mejorar tu pensión futura.</p>
-			</div>
-		</div>
-	</div>
+    <!-- Servicio 9 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc9" class="collapsed">
+            <img src="https://img.freepik.com/foto-gratis/novio-pone-anillo-bodas-mano-novia_8353-7221.jpg?w=1480" class="icon-service"> Retiro por matrimonio
+          </a>
+        </h6>
+      </div>
+      <div id="svc9" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Accede a un apoyo económico único al contraer matrimonio civil, conforme a lo establecido por la ley.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Servicio 10 -->
+    <div class="panel">
+      <div class="panel-heading">
+        <h6 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion-services" href="#svc10" class="collapsed">
+            <img src="https://img.freepik.com/foto-gratis/monedas-frasco-vidrio-espacio-copia_23-2148783058.jpg?w=1480" class="icon-service"> Modalidad 40
+          </a>
+        </h6>
+      </div>
+      <div id="svc10" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>Continúa cotizando de forma independiente para incrementar tu pensión futura y semanas reconocidas.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
- <!-- /.row -->
-					</div> <!-- /.wrapper -->
+ <!-- /.wrapper -->
 					<div class="contact-text">
 						<!-- <h4>You can also send us an email and we’ll get in touch shortly, or Call us</h4>
 						<h5><a href="#">info@support.com</a>  (or)  <a href="#">+1 234 6780 900</a></h5> -->
