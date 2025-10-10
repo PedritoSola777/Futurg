@@ -22,61 +22,7 @@
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		<link rel="stylesheet" href="css/bannerMob.css">
 
-		<style>
-			@media (max-width: 768px) {
-  /* Eliminar márgenes y altura sobrante del contenedor principal */
-  .header-one,
-  .top-header,
-  .theme-menu-wrapper {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-  }
-
-  /* Compactar el contenedor superior */
-  .top-header .container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 5px 0 !important;
-    height: auto !important;
-  }
-
-  /* Centramos y agrandamos el logo sin espacio extra */
-  .top-header .logo {
-    float: none !important;
-    width: 100% !important;
-    text-align: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .top-header .logo img {
-    height: 100px !important; /* Ajústalo si lo quieres más grande o chico */
-    width: auto !important;
-    margin: 0 auto !important;
-    display: block !important;
-  }
-
-  /* Ocultamos teléfono/barra de info para liberar espacio */
-  .address-wrapper {
-    display: none !important;
-  }
-
-  /* Quitamos el espacio fantasma del wrapper del menú */
-  .theme-menu-wrapper .bg-wrapper {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Evita cualquier colapso por floats viejos */
-  .clearfix::after {
-    content: none !important;
-    display: none !important;
-  }
-}
-
-		</style>
+		
 
 
 
@@ -107,7 +53,10 @@
 			-->
 			<header class="header-one">
 				<div class="top-header">
+													<img class="header-mobile-banner" src="images/logo/bannerNav2.jpg" alt="Banner">
+
 					<div class="container clearfix">
+
 						<div class="logo float-left"><a href="index.html"><img src="images/logo/COLOR-PNG.png" alt=""></a></div>
 						<div class="address-wrapper float-right">
 							<ul>
@@ -535,8 +484,8 @@
           <h4> - Asistente Virtual -</h4>
           <p>Bienvenido a Grupo Futura. Si necesitas más información sobre nuestros servicios o necesitas ayuda de un asesor para realizar cualquier trámite con tu afore, envíanos mensaje.</p>
           <div class="popup-actions">
-            <a href="mailto:clientes@grupofuturaconsultores.com">E-mail</a>
-            <a href="https://wa.me/527297307429" target="_blank" class="whatsapp-button">WhatsApp</a>
+            <a href="mailto:clientes@grupofuturaconsultores.com" class="email-btn">E-mail</a>
+            <a href="https://wa.me/527297307429" target="_blank" class="whatsapp-btn">WhatsApp</a>
           </div>
         </div>
       </div>
@@ -600,13 +549,13 @@
 }
 
 .email-btn {
-  background-color: #e0f7fa;
-  color: #00796b;
+  background-color: #007BFF;
+  color: #e0ffe0;
 }
 
 .whatsapp-btn {
-  background-color: #e0ffe0;
-  color: #388e3c;
+  background-color: #007BFF;
+  color: #e0ffe0;
 }
 
 .email-btn:hover,

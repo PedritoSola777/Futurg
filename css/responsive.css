@@ -214,3 +214,160 @@
 @media (max-width: 380px) {
   .cunter-wrapper [class*="col-"] {max-width: 100%;flex: 0 0 100%;}
 }
+
+
+
+			@media (max-width: 768px) {
+
+  /* ✅ Elimina margen/padding del bloque que envuelve TODO el header */
+  .main-page-wrapper,
+  .theme-header-two,
+  body,
+  html {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* ✅ Ajusta el header para que quede pegado arriba */
+  header.header-one {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    position: relative !important;
+  }
+
+  /* ✅ Fondo blanco sin espacio arriba */
+  .header-one::before,
+  .header-one::after {
+    display: none !important;
+  }
+
+  /* ✅ Elimina cualquier espacio fantasma arriba */
+  header.header-one,
+  .header-one > div,
+  .header-one .top-header,
+  .header-one .theme-menu-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* ✅ Forzar que el slider suba */
+  .theme-main-banner,
+  .main-banner-wrapper,
+  .owl-carousel,
+  div[style*="background"],
+  .slider,
+  .banner {
+    margin-top: 0 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  /* Reducir drásticamente el tamaño del logo */
+  .logo img {
+    max-height: 70px !important;  /* Prueba con 60 o 50 si lo quieres más bajo */
+    width: auto !important;
+    display: block !important;
+    margin: 10px auto 0 auto !important;
+  }
+
+  /* Asegurar que el contenedor del logo no deje espacio extra */
+  .logo {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Aumentar el alto de la banda azul */
+  .theme-menu-wrapper {
+    background-color: #0b61a4 !important;  /* Si quieres conservar tu azul actual, deja este o cambia */
+    padding: 12px 0 !important;            /* Aumenta altura, antes estaba en 5px o menos */
+  }
+
+  /* Asegurar que el contenedor del icono no colapse */
+  .menu-collapser,
+  .collapse-button {
+    height: auto !important;
+    padding: 0 !important;
+  }
+
+  /* Centrar y hacer más visible el ícono hamburguesa */
+  .collapse-button .icon-bar,
+  .menu-collapser .icon-bar {
+    background-color: white !important;   /* Negro/Blanco, tú decides */
+    width: 32px !important;               /* Más ancho */
+    height: 4px !important;               /* Más grueso */
+    margin: 6px auto !important;          /* Espacio entre barras */
+    border-radius: 2px !important;
+  }
+
+  /* Posicionar el ícono verticalmente centrado en la barra */
+  .menu-collapser {
+    display: flex !important;
+    align-items: center !important;
+    padding-left: 15px !important;  /* Para que no esté pegado a la izquierda */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Subir el ícono hamburguesa dentro de la barra azul */
+  .menu-collapser {
+    display: flex !important;
+    align-items: flex-start !important;  /* Lo empuja hacia arriba */
+    padding-left: 15px !important;
+    padding-top: 0 !important;
+    margin-top: 4px !important;  /* Ajuste fino para levantarlo */
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Imagen en lugar del logo */
+  .top-header {
+    background: url("images/logo/bannerNav.jpg") no-repeat center center !important;
+    background-size: cover !important;
+    height: 120px !important; /* Ajustable si lo quieren más grande o pequeño */
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Ocultar el logo original */
+  .top-header .logo {
+    display: none !important;
+  }
+}
+
+/* ✅ Imagen visible SOLO en mobile */
+.header-mobile-banner {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Mostrar banner e ignorar el logo */
+  .header-mobile-banner {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Ocultar logo en móvil */
+  .top-header .logo {
+    display: none !important;
+  }
+
+  /* Asegurar que no haya margen extra */
+  .top-header {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+  }
+}
+
