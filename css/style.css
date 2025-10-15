@@ -1303,30 +1303,45 @@ body .theme-button-one:hover {background:#1b72b2; }
 .google-map-one {height: 300px;}
 /*---------------------- Theme Inner Banner -----------------*/
 .theme-inner-banner {
-  background: url(../images/home/inner-banner.jpg) no-repeat center center;
+  background: url(../images/home/BackBlog.jpg) no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
   background-color: #707d9e;
 }
+
 .theme-inner-banner .overlay {
   background: rgba(0,26,87,0.4);
   text-align: center;
-  padding: 110px 0 70px 0;
+  padding: 180px 0 140px 0; /* AUMENTÉ EL ALTO */
 }
-.theme-inner-banner .overlay h2 {font-size: 45px;color: #fff;text-transform: uppercase;}
+
+.theme-inner-banner .overlay h2 {
+  font-size: 45px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
 /*---------------------- Theme Inner Banner2 -----------------*/
 .theme-inner-banner2 {
-  background: url(https://img.freepik.com/free-photo/question-mark-bubble-speech-sign-symbol-icon-3d-rendering_56104-1950.jpg?ga=GA1.1.1802533643.1735888286&semt=ais_incoming&w=740&q=80) no-repeat center center;
+  background: url(/images/home/FAQBack.jpg) no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
   background-color: #707d9e;
 }
+
 .theme-inner-banner2 .overlay {
   background: rgba(0,26,87,0.4);
   text-align: center;
-  padding: 110px 0 70px 0;
+  padding: 240px 0 200px 0; /* MÁS ALTO QUE ANTES */
 }
-.theme-inner-banner2 .overlay h2 {font-size: 45px;color: #fff;text-transform: uppercase;}
+
+.theme-inner-banner2 .overlay h2 {
+  font-size: 45px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+
 /*------------------- Why WE Best -------------------*/
 .why-we-best {
   background: url(../images/home/11.jpg) no-repeat center center;
@@ -2199,18 +2214,60 @@ body .theme-button-one:hover {background:#1b72b2; }
 }
 
 /* Botón burger visible solo en mobile */
-.menu-trigger{
-  display:none; border:0; background:transparent; padding:8px; cursor:pointer;
+.menu-trigger {
+  display: none;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
 }
-.menu-trigger .mt-bar{
-  display:block; width:26px; height:2px; background:#000; margin:5px 0;
+
+/* Eliminamos las barras originales */
+.menu-trigger .mt-bar {
+  display: none;
 }
+
+/* Reemplazamos las barras por una lupa usando solo CSS */
+.menu-trigger::before {
+  content: "\1F50D"; /* Unicode de lupa */
+  font-size: 28px;
+  color: #000;
+  display: inline-block;
+}
+
 /* Mobile */
 @media (max-width: 991px){
-  .menu-trigger{ display:inline-block; }
+  .menu-trigger { 
+    display: inline-block;
+  }
+
   /* Alinea el botón a la derecha del header */
-  .theme-menu-wrapper .bg-wrapper{ display:flex; align-items:center; justify-content:space-between; }
+  .theme-menu-wrapper .bg-wrapper { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+  }
 }
+
+/* Oculta cualquier barra del menú hamburguesa */
+.menu-trigger span,
+.navbar-toggle span,
+.toggle-btn span,
+.icon-bar,
+.mt-bar {
+  display: none !important;
+}
+
+/* Reemplazo universal por lupa */
+.menu-trigger::before,
+.navbar-toggle::before,
+.toggle-btn::before {
+  content: "\1F50D";
+  font-size: 28px;
+  color: #000;
+  display: inline-block;
+}
+
 
 
 /* Separación vertical dentro del aviso (.x) */
@@ -2337,12 +2394,6 @@ body .theme-button-one:hover {background:#1b72b2; }
   }
 }
 
-
-
-
-
-
-
 /* ✅ Versión para DESKTOP */
 @media (min-width: 769px) {
   .logo img {
@@ -2350,3 +2401,137 @@ body .theme-button-one:hover {background:#1b72b2; }
     width: auto !important;
   }
 }
+
+/*chat bot*/
+    .popup-card {
+  position: fixed;
+  bottom: 80px; /* espacio para evitar el chat-icon */
+  right: 20px;
+  width: 450px;
+  max-width: 90vw; /* limitar ancho en móviles */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  align-self: center;
+}
+
+.popup-content h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.popup-content p {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.email-btn,
+.whatsapp-btn {
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.email-btn {
+  background-color: #007BFF;
+  color: #e0ffe0;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: #e0ffe0;
+}
+
+.email-btn:hover,
+.whatsapp-btn:hover {
+  opacity: 0.9;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+}
+
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1b72b2;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 🔽 Responsividad para móviles */
+@media screen and (max-width: 480px) {
+  .popup-card {
+    width: 90%;
+    right: 5%;
+    bottom: 90px;
+    padding: 10px;
+  }
+
+  .popup-content h4 {
+    font-size: 14px;
+  }
+
+  .popup-content p {
+    font-size: 13px;
+  }
+
+  .popup-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-btn,
+  .whatsapp-btn {
+    width: 80%;
+    text-align: center;
+  }
+
+  .close-btn {
+    font-size: 18px;
+  }
+}
+   

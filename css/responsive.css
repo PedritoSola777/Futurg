@@ -371,3 +371,25 @@
   }
 }
 
+
+			/* MOBILE: ocultar menú por defecto */
+@media (max-width: 991px) {
+  #mega-menu-holder,
+  #mega-menu-holder > ul {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* Mostrar menú cuando se activa menu-open */
+  html.menu-open #mega-menu-holder,
+  html.menu-open #mega-menu-holder > ul {
+    display: block !important;
+    visibility: visible;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+		
