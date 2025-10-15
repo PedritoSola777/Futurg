@@ -1304,7 +1304,7 @@ body .theme-button-one:hover {background:#1b72b2; }
 /*---------------------- Theme Inner Banner -----------------*/
 .theme-inner-banner {
   background: url(../images/home/BackBlog.jpg) no-repeat center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   background-color: #707d9e;
 }
@@ -1312,7 +1312,11 @@ body .theme-button-one:hover {background:#1b72b2; }
 .theme-inner-banner .overlay {
   background: rgba(0,26,87,0.4);
   text-align: center;
-  padding: 180px 0 140px 0; /* AUMENTÉ EL ALTO */
+  padding: 0; /* eliminamos padding */
+  height: 80vh; /* ocupa toda la altura visible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .theme-inner-banner .overlay h2 {
@@ -1321,10 +1325,9 @@ body .theme-button-one:hover {background:#1b72b2; }
   text-transform: uppercase;
 }
 
-/*---------------------- Theme Inner Banner2 -----------------*/
 .theme-inner-banner2 {
   background: url(/images/home/FAQBack.jpg) no-repeat center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   background-color: #707d9e;
 }
@@ -1332,8 +1335,13 @@ body .theme-button-one:hover {background:#1b72b2; }
 .theme-inner-banner2 .overlay {
   background: rgba(0,26,87,0.4);
   text-align: center;
-  padding: 240px 0 200px 0; /* MÁS ALTO QUE ANTES */
+  padding: 0; /* eliminamos padding */
+  height: 80vh; /* ocupa toda la altura visible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .theme-inner-banner2 .overlay h2 {
   font-size: 45px;

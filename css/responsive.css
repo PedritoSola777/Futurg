@@ -392,4 +392,28 @@
   }
 }
 
-		
+/* Ajusta posición del botón del menú móvil */
+.menu-trigger {
+  position: absolute;   /* Mueve sin afectar otros elementos */
+  top: 11px;            /* Súbelo más (ajustable) */
+  left: 15px;           /* Si lo quieres del lado izquierdo */
+  z-index: 9999;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Si quieres que esté a la derecha, cambia left por right */
+@media (max-width: 991px) {
+  .menu-trigger {
+    display: inline-block;
+  }
+}
+
+/* Oculta cualquier barra o ícono anterior (como la lupa vieja) */
+.menu-trigger .mt-bar,
+.menu-trigger::before {
+  display: none !important;
+  content: none !important;
+}
