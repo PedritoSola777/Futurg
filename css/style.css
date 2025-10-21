@@ -1350,6 +1350,36 @@ body .theme-button-one:hover {background:#1b72b2; }
 }
 
 
+/* 📱 Versión Mobile */
+@media (max-width: 768px) {
+  .theme-inner-banner {
+    background: url(../images/home/BlogMobile.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .theme-inner-banner2 {
+    background: url(/images/home/FaqMobile.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .theme-inner-banner .overlay,
+  .theme-inner-banner2 .overlay      {
+    height: 70vh; /* altura reducida */
+    padding: 40px 20px;
+    flex-direction: column;
+  }
+
+  .theme-inner-banner .overlay h2,
+  .theme-inner-banner2 .overlay h2 {
+    font-size: 28px;
+    line-height: 1.3;
+    padding: 0 10px;
+  }
+}
+
+
 /*------------------- Why WE Best -------------------*/
 .why-we-best {
   background: url(../images/home/11.jpg) no-repeat center center;
