@@ -1336,7 +1336,8 @@ body .theme-button-one:hover {background:#1b72b2; }
   background: rgba(0,26,87,0.4);
   text-align: center;
   padding: 0; /* eliminamos padding */
-  height: 60vh; /* ocupa toda la altura visible */
+  padding-top: 30px;
+  height: 90vh; /* ocupa toda la altura visible */
   display: flex;
   align-items: center;
   justify-content: center;
