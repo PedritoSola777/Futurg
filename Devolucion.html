@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content=" HTML5 Template">
+
+  <!-- Site Title -->
+  <title>Blog</title>
+
+  <!-- Site Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/FavK.png">
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+
+  <!-- All CSS Files -->
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/aos.css">
+  <link rel="stylesheet" href="assets/css/progressbar.css">
+  <link rel="stylesheet" href="assets/css/master.css">
+
+  <style>
+   :root{
+  --nav-h: 110px; /* ajusta si necesitas */
+}
+
+/* Fuerza que el header no sea absolute */
+.header__area,
+.header__area.pos-abs{
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  z-index: 99999;
+
+  background: #0c1014; /* color sólido */
+  backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Alineación interna */
+.header__inner{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Texto del menú en blanco */
+.main-menu > ul > li > a{
+  color: #fff !important;
+}
+
+.main-menu > ul > li > a:hover{
+  color: #c59d5f !important; /* color acento */
+}
+
+/* Empuja el contenido debajo del header */
+body{
+  padding-top: var(--nav-h);
+}
+
+/* Responsive */
+@media (max-width: 991px){
+  :root{ --nav-h: 90px; }
+}
+
+@media (max-width: 575px){
+  :root{ --nav-h: 78px; }
+}
+
+.breadcrumb__area{
+  width: 100%;
+  height: 50vh;          /* 🔥 menos alto */
+  min-height: 420px;     /* mantiene tamaño mínimo elegante */
+
+  background-image: url("assets/imgs/hero/blogBanner.jpg") !important;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;  /* mantenemos cover */
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* máscara negra */
+.breadcrumb__area::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* intensidad de la máscara */
+  z-index: 1;
+}
+
+/* asegura que el contenido quede encima */
+.breadcrumb__area > *{
+  position: relative;
+  z-index: 2;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+  <!-- Scroll to top -->
+  <button id="scroll_top" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+  <!-- Header area start -->
+  <header class="header__area pos-abs plr-100">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="index.html"><img src="assets/imgs/logo/Kapital8.png" alt="Site Logo" style="width: 250px;"></a>
+      </div>
+      <div class="header__menu">
+        <nav class="main-menu">
+          <ul>
+  <li><a href="index.html">Inicio</a></li>
+
+  <li><a href="contact.html">Contacto</a></li>
+
+  <li><a href="privacy.html">Aviso de privacidad</a></li>
+
+  <li><a href="tramites.html">Trámites</a></li>
+
+  <li><a href="faq.html">Preguntas frecuentes</a></li>
+
+  <li><a href="blog.html">Blog</a></li>
+</ul>
+        </nav>
+      </div>
+      <div class="header__others">
+        <div class="header__search">
+          <!-- <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+          <button class="search-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="header__offcanvas">
+          <button class="menu_icon">
+            <img src="assets/imgs/icon/menu.png" alt="Menu Icon">
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="search__form">
+    <form action="#">
+      <input type="text" name="s" placeholder="Search...">
+    </form>
+  </div>
+  <!-- Header area end -->
+
+  <!-- Offcanvas area start -->
+   <div class="offcanvas__area">
+  <div class="offcanvas__inner">
+    <div class="offcanvas__top">
+      <img src="assets/imgs/logo/Kapital8.png" alt="Logo">
+      <button id="offcanvas_close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="offcanvas__search">
+      <form action="#">
+        <input type="text" placeholder="Buscar..." name="s">
+      </form>
+    </div>
+
+    <div class="offcanvas__menu">
+      <div class="offcanvas-menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+          <li><a href="privacy.html">Aviso de privacidad</a></li>
+          <li><a href="tramites.html">Trámites</a></li>
+          <li><a href="faq.html">Preguntas frecuentes</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offcanvas__map">
+      <iframe
+        src="https://www.google.com/maps?q=Torre+Albertina+Puebla&output=embed"
+        loading="lazy"></iframe>
+    </div>
+
+    <div class="offcanvas__btm">
+      <div class="footer__address-3">
+        <ul>
+          <li>
+            <span><i class="fa-solid fa-location-dot"></i></span>
+            <p class="text-white">
+              Torre Albertina<br>
+              Calle Tehuacan Sur 60, La Paz<br>
+              Heroica Puebla de Zaragoza, Puebla
+            </p>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-phone"></i></span>
+            <div>
+              <a href="tel:+5217444574309">+52 1 744 457 4309</a>
+              <a href="tel:+522215851569">(221) 585 1569</a>
+            </div>
+          </li>
+
+          <li>
+            <span><i class="fa-solid fa-envelope"></i></span>
+            <div>
+              <a href="mailto:clientes@kapitalconsultinggroup.com">clientes@kapitalconsultinggroup.com</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__social-3">
+        <ul>
+          <!-- <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Offcanvas area end -->
+
+
+  <main>
+
+    <!-- Breadcrumb area start -->
+    <section class="breadcrumb__area">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxl-12">
+            <div class="breadcrumb__inner">
+              <div class="breadcrumb__left">
+                <h1 class="breadcrumb__title" style="color: white;">Blog del derechohabiente</h1>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb area end -->
+
+    <!-- blog area start -->
+    <section class="blog__details pt-150 pb-150">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="blog__single">
+              <div class="blog__thumb-inner">
+                <img src="https://www.eluniversal.com.mx/resizer/v2/GFD52SZBTJBRNJS7TYPHGBMZQY.jpg?auth=e1358d336cd860f4fd69cb1c75ce3fea53029cc66938a00365cead3b45f37fe2&smart=true&height=373" alt="blog-img" data-lag="0.3">
+              </div>
+              <div class="blog__content-inner">
+               
+                <h2>Infonavit detalla cómo solicitar la devolución del ahorro en la Subcuenta de Vivienda; hay dos formas para hacerlo</h2>
+                <br>
+                  <p>
+
+Al llegar a la edad de jubilación se puede solicitar la devolución del ahorro en la Subcuenta de Vivienda del Infonavit si no se utilizó para adquirir o mejorar una vivienda.                    <br><br>
+
+
+El Infonavit destacó que este ahorro no se pierde, incluso si ya fue transferido al Fondo de Pensiones para el Bienestar, ya que los trabajadores siempre tendrán el derecho de solicitar la devolución de su dinero.
+
+
+En caso de fallecimiento, este recurso podrá ser reclamado por los beneficiarios designados como cónyuge, hijos o padres o, en su defecto, por quienes determine la autoridad laboral competente.</p>
+                
+                </div>
+               
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- /blog area end -->
+
+
+
+  </main>
+
+
+  <!-- Footer area start -->
+ <footer class="footer__area footer_two_area" aria-labelledby="footer-title">
+  <div class="footer__widgets">
+    <div class="container">
+      <div class="row gy-4 align-items-start">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer__logo">
+            <a href="index.html" class="d-inline-flex align-items-center" aria-label="Ir al inicio">
+              <img src="assets/imgs/logo/Kapital8.png" alt="Kapital Consulting Group">
+            </a>
+
+            <p class="mt-3 mb-0 text-white-50">
+              © Kapital Consulting Group. Todos los derechos reservados
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="footer__service">
+            <h2 class="footer__title" id="footer-title">Contacto</h2>
+
+            <ul class="footer__contact list-unstyled m-0">
+              <li class="d-flex align-items-start gap-3">
+                <span class="footer__icon" aria-hidden="true">
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <address class="mb-0" style="color: white;">
+                  Torre Albertina<br>
+                  Calle Tehuacan Sur 60, La Paz,<br>
+                  Heroica Puebla de Zaragoza, Puebla
+                </address>
+              </li>
+
+              <li class="d-flex align-items-center gap-3 mt-3">
+                <span class="footer__icon" aria-hidden="true">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <div class="d-flex flex-column">
+                  <a href="tel:+522215851569">(221) 585 1569</a>
+                </div>
+              </li>
+
+              <li class="d-flex align-items-center gap-3 mt-3">
+                <span class="footer__icon" aria-hidden="true">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <a href="mailto:clientes@kapitalconsultinggroup.com">clientes@kapitalconsultinggroup.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- <div class="col-lg-4 col-md-12">
+          <div class="footer__service">
+            <h2 class="footer__title">Navegación</h2>
+            <ul class="footer__links list-unstyled m-0">
+              <li><a href="about.html">Nosotros</a></li>
+              <li><a href="services.html">Servicios</a></li>
+              <li><a href="projects.html">Proyectos</a></li>
+              <li><a href="contact.html">Contacto</a></li>
+            </ul>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="footer__bottom mt-4 pt-4 border-top border-light border-opacity-10">
+        <div class="row align-items-center gy-2">
+          <div class="col-md-6">
+            <p class="mb-0 text-white-50 small">
+              Torre Albertina · Puebla, México
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a class="small text-white-50" href="privacy.html">Aviso de privacidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Footer area end -->
+
+</div>
+</div>
+
+
+  <!-- All JS Files -->
+  <script src="assets/js/jquery-3.6.1.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/jquery.meanmenu.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/progressbar.js"></script>
+  <script src="assets/js/aos.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/SplitText.min.js"></script>
+  <script src="assets/js/ScrollSmoother.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vanilla-tilt.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
